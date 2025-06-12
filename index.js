@@ -1,6 +1,10 @@
 const express = require("express");
 const fetch = require("node-fetch");
+const cors = require("cors"); // <--- DODAJ TO
 const app = express();
+
+app.use(cors()); // <--- DODAJ TO
+
 
 app.get("/api/pagespeed", async (req, res) => {
   const { url, strategy } = req.query;
