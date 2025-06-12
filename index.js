@@ -12,7 +12,8 @@ app.get("/api/pagespeed", async (req, res) => {
   if (!url) return res.status(400).json({ error: "Missing URL" });
 
   const apiKey = "AIzaSyCIg_L8MgBQ7n1HweXNHkaz5QCdmlmmwMo"; // ← Wklej swój API key!
-  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=${strategy}&key=${apiKey}`;
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=${strategy}&category=performance&category=accessibility&category=seo&category=best-practices&key=${apiKey}`;
+
 
   try {
     const response = await fetch(apiUrl);
